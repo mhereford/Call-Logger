@@ -8,5 +8,9 @@ namespace Call_Logger.Controllers
 {
     public class CallLogController : Controller
     {
+        public string Detail()
+        {
+            return "This is the Call Logger Controller.";
+        }
     }
 }
