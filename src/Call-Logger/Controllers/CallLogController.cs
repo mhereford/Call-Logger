@@ -8,9 +8,9 @@ namespace Call_Logger.Controllers
 {
     public class CallLogController : Controller
     {
-        public string Detail()
+        public ActionResult Detail()
         {
-            return "This is the Call Logger Controller.";
+            return Content("This is the Call Logger Controller.");
         }
     }
 }
