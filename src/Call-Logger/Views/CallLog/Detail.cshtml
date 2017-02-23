@@ -1,13 +1,5 @@
 ﻿@{
     Layout = null;
-
-    var callID = 001;
-    var custRep = "Greg Sherman";
-    var callTS = "02/22/2017";
-    var registrantID = 100001;
-    var callStatus = "Open";
-    var summary = "<p>VIS password reset.</p>";
-
 }
 
 <!DOCTYPE html>
@@ -19,14 +11,26 @@
 </head>
 <body>
     <div>
-    <h1>Call ID: @callID</h1>
-        <h2>Operator: @custRep</h2>
-        <h2>Date: @callTS</h2>
+    <h1>Call ID: @ViewBag.CallID</h1>
+        <h2>Operator: @ViewBag.CustRep</h2>
+        <h2>Date: @ViewBag.CallTS</h2>
         
-        <h2>Status: @callStatus</h2>
-        <h2>Registrant: @registrantID</h2>
+        <h2>Status: @ViewBag.CallStatus</h2>
+        <h2>Registrant: @ViewBag.RegistrantID</h2>
         <h4>Summary: </h4>
-        <div>@Html.Raw(summary)</div>
+        <div>@Html.Raw(ViewBag.Summary)</div>
+        @if (ViewBag.TopicFlags.Length > 0)
+        {
+            <h5>Call Topics:</h5>
+            <div>
+                <ul>
+                     @foreach (var topicFlag in ViewBag.TopicFlags)
+                    {
+                        <li>@topicFlag</li>
+                    }
+                </ul>
+            </div>
+        }
     </div>
 </body>
 </html>
