@@ -10,7 +10,7 @@ namespace Call_Logger.Controllers
     {
         public ActionResult Detail()
         {
-            return Content("This is the Call Logger Controller.");
+            return View();
         }
     }
 }
