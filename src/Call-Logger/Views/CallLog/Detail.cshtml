@@ -1,5 +1,13 @@
 ﻿@{
     Layout = null;
+
+    var callID = 001;
+    var custRep = "Greg Sherman";
+    var callTS = "02/22/2017";
+    var registrantID = 100001;
+    var callStatus = "Open";
+    var summary = "<p>VIS password reset.</p>";
+
 }
 
 <!DOCTYPE html>
@@ -11,7 +19,14 @@
 </head>
 <body>
     <div>
-    <h1>This is the Detail View.</h1>
+    <h1>Call ID: @callID</h1>
+        <h2>Operator: @custRep</h2>
+        <h2>Date: @callTS</h2>
+        
+        <h2>Status: @callStatus</h2>
+        <h2>Registrant: @registrantID</h2>
+        <h4>Summary: </h4>
+        <div>@Html.Raw(summary)</div>
     </div>
 </body>
 </html>
