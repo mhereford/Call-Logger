@@ -1,23 +1,25 @@
-﻿@{
+﻿@model Call_Logger.Models.Call
+
+@{
     Layout = "~/Views/Shared/_Layout.cshtml";
     ViewBag.Title = "VNS Call Log Detail";
 }
-<h1>Call ID: @ViewBag.CallID</h1>
-<h2>Operator: @ViewBag.CustRep</h2>
-<h2>Date: @ViewBag.CallTS</h2>
+<h1>Call ID: @Model.CallID</h1>
+<h2>Operator: @Model.CustRep</h2>
+<h2>Date: @Model.CallTS</h2>
         
-<h2>Status: @ViewBag.CallStatus</h2>
-<h2>Registrant: @ViewBag.RegistrantID</h2>
+<h2>Status: @Model.CallStatus</h2>
+<h2>Registrant: @Model.RegistrantID</h2>
 <h4>Summary: </h4>
-<div>@Html.Raw(ViewBag.Summary)</div>
-@if (ViewBag.TopicFlags.Length > 0)
+<div>@Html.Raw(Model.SummaryHtml)</div>
+@if (Model.TopicFlags.Length > 0)
 {
     <h5>Call Topics:</h5>
     <div>
         <ul>
-                @foreach (var topicFlag in ViewBag.TopicFlags)
+                @foreach (var topicFlag in Model.TopicFlags)
             {
-                <li>@topicFlag</li>
+                <li>@topicFlag.Topic: @topicFlag.TopicSelected</li>
             }
         </ul>
     </div>

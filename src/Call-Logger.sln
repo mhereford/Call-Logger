@@ -3,7 +3,7 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio 14
 VisualStudioVersion = 14.0.25420.1
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Call-Logger", "Call-Logger\Call-Logger.csproj", "{FD09A2BE-5A2F-49E5-ABC7-42F0E748EA18}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Call_Logger", "Call-Logger\Call_Logger.csproj", "{FD09A2BE-5A2F-49E5-ABC7-42F0E748EA18}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution

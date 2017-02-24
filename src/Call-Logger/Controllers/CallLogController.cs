@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Web;
 using System.Web.Mvc;
+using Call_Logger.Models;
 
 namespace Call_Logger.Controllers
 {
@@ -10,20 +11,22 @@ namespace Call_Logger.Controllers
     {
         public ActionResult Detail()
         {
-            ViewBag.CallID = 001;
-            ViewBag.CustRep = "Greg Sherman";
-            ViewBag.CallTS = "02/22/2017";
-            ViewBag.RegistrantID = 100001;
-            ViewBag.CallStatus = "Open";
-            ViewBag.Summary = "<p>VIS password reset.  Where's my money???</p>";
-            ViewBag.TopicFlags = new string[]
+            var call = new Call()
+            {
+                CallID = 001,
+                CustRep = "Greg Sherman",
+                CallTS = "2017-02-22",
+                CallStatus = "Open",
+                SummaryHtml = "<p>VIS password reset.  Where's my money???</p>",
+                TopicFlags = new TopicFlag[]
                 {
-                    "Restitution: YES",
-                    "Opt-Out: NO",
-                    "Cancel Phone Call: NO"
-                };
+                    new TopicFlag() { Topic = "Restitution", TopicSelected = true },
+                    new TopicFlag() { Topic = "Opt-Out", TopicSelected = false },
+                    new TopicFlag() { Topic = "Cancel Phone Call", TopicSelected = false }
+                }
+            };
 
-            return View();
+          return View(call);
         }
     }
 }
