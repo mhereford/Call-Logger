@@ -10,8 +10,20 @@ namespace Call_Logger.Controllers
 {
     public class CallLogController : Controller
     {
-        public ActionResult Detail()
+        private CallLogRepository _callLogRepository = null;
+
+        public CallLogController()
         {
+            _callLogRepository = new CallLogRepository();
+        }
+        public ActionResult Detail(int? ID)
+        {
+            if (ID == null)
+            {
+                return HttpNotFound();
+            }
+
+            var call = _callLogRepository.GetCall((int)ID);
             return View(call);
         }
     }
