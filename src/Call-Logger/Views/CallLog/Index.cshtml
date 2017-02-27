@@ -10,8 +10,10 @@
     @foreach (var call in Model)
     {
         <div class="col-md-3">
+            <a href="@Url.Action("Detail", new {id = call.CallID})">
             <h4>Call ID: @call.CallID</h4>
-            <h4>Call TimeStamp: @call.CallTS </h4>
+           </a>
+            <h4>Date: @call.CallTS </h4>
             <h4>Operator: @call.CustRep</h4>
             <div>Summary: @Html.Raw(call.SummaryHtml)</div>
         </div>
