@@ -59,6 +59,12 @@ namespace Call_Logger.Data
             }
         };
 
+        public Call[] GetCalls()
+        {
+            return _calls;
+        }
+
+
         public Call GetCall(int ID)
         {
             Call callToReturn = null;

@@ -16,6 +16,13 @@ namespace Call_Logger.Controllers
         {
             _callLogRepository = new CallLogRepository();
         }
+
+        public ActionResult Index()
+        {
+            var calls = _callLogRepository.GetCalls();
+            return View(calls);
+        }
+
         public ActionResult Detail(int? ID)
         {
             if (ID == null)
