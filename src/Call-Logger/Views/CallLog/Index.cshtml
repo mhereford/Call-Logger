@@ -1,7 +1,21 @@
-﻿
+﻿@model Call_Logger.Models.Call[]
+
 @{
-    ViewBag.Title = "Index";
+    ViewBag.Title = "Call Log";
 }
 
-<h2>Index</h2>
+<h2>@ViewBag.Title</h2>
 
+<div class="row">
+    @foreach (var call in Model)
+    {
+        <div class="col-md-3">
+            <h4>Call ID: @call.CallID</h4>
+            <h4>Call TimeStamp: @call.CallTS </h4>
+            <h4>Operator: @call.CustRep</h4>
+            <div>Summary: @Html.Raw(call.SummaryHtml)</div>
+        </div>
+    }
+    </div>
+
+    
