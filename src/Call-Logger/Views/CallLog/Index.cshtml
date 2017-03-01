@@ -6,18 +6,35 @@
 
 <h2>@ViewBag.Title</h2>
 
-<div class="row">
+<table class="table">
+    <tr>
+        <th>Call ID</th>
+        <th>Date</th>
+        <th class="hidden-xs">Operator</th>
+        <th>Summary</th>
+        <th>&nbsp;</th>
+    </tr>
+
     @foreach (var call in Model)
     {
-        <div class="col-md-3">
-            <a href="@Url.Action("Detail", new {id = call.CallID})">
-            <h4>Call ID: @call.CallID</h4>
-           </a>
-            <h4>Date: @call.CallTS </h4>
-            <h4>Operator: @call.CustRep</h4>
-            <div>Summary: @Html.Raw(call.SummaryHtml)</div>
-        </div>
+
+        <tr>
+            <td>@call.CallID</td>
+            <td>@call.CallTS</td>
+            <td>@call.CustRep</td>
+            <td>@Html.Raw(call.SummaryHtml)</td>
+            <td>
+                <div class="pull-right">
+                    <a href="@Url.Action("Edit", new { id = call.CallID })" class="btn btn-warning btn-sm margin-right">
+                        <span class="glyphicon glyphicon-edit"></span><span class="hidden-xs"> Edit</span>
+                    </a>
+                    <a href="@Url.Action("Delete", new { id = call.CallID })" class="btn btn-danger btn-sm">
+                        <span class="glyphicon glyphicon-trash"></span><span class="hidden-xs"> Delete</span>
+                    </a>
+                </div>
+            </td>
+        </tr>        
     }
-    </div>
+    </table>
 
     

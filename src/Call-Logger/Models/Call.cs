@@ -14,5 +14,6 @@ namespace Call_Logger.Models
         public int RegistrantID { get; set; }
         public string SummaryHtml { get; set; }
         public TopicFlag[] TopicFlags { get; set; }
+        public string CallNotes { get; set; }
     }
 }

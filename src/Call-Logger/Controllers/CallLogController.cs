@@ -23,6 +23,11 @@ namespace Call_Logger.Controllers
             return View(calls);
         }
 
+        public ActionResult Add()
+        {
+              return View();
+        }
+
         public ActionResult Detail(int? ID)
         {
             if (ID == null)

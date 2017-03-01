@@ -13,8 +13,8 @@ namespace Call_Logger.Data
             new Call()
             {
                 CallID = 001,
-                CustRep = "Greg Sherman",
                 CallTS = "2017-02-22",
+                CustRep = "Greg Sherman",
                 CallStatus = "Open",
                 RegistrantID = 200001,
                 SummaryHtml = "<p>VIS password reset.  Where's my money???</p>",
@@ -23,7 +23,8 @@ namespace Call_Logger.Data
                     new TopicFlag() { Topic = "Restitution", TopicSelected = true },
                     new TopicFlag() { Topic = "Opt-Out", TopicSelected = false },
                     new TopicFlag() { Topic = "Cancel Phone Call", TopicSelected = false }
-                }
+                },
+                CallNotes = null
             },
 
             new Call()
