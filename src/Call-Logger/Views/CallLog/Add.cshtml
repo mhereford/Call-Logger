@@ -12,44 +12,44 @@
 
             <div class="form-group">
                 <label for="CallID" class="control-label">Call ID</label>
-                <input type="text" id="CallID" name="CallID" class="form-control" />
+                <input type="text" id="CallID" name="CallID" class="form-control" value="@ViewBag.CallID" />
             </div>
             
             <div class="form-group">
                 <label for="CallTS" class="control-label">Date</label>
-                <input type="text" id="CallTS" name="CallTS" class="form-control" />
+                <input type="text" id="CallTS" name="CallTS" class="form-control" value="@ViewBag.CallTS" />
             </div>       
 
             <div class="form-group">
                 <label for="CustRep" class="control-label">Operator</label>
-                <input type="text" id="CustRep" name="CustRep" class="form-control" />
+                <input type="text" id="CustRep" name="CustRep" class="form-control" value="@ViewBag.CustRep" />
             </div>
 
             <div class="form-group">
                 <label for="CallStatus" class="control-label">Call Status</label>
-                <input type="text" id="CallStatus" name="CallStatus" class="form-control" />
+                <input type="text" id="CallStatus" name="CallStatus" class="form-control" value="@ViewBag.CallStatus" />
             </div>
 
             <div class="form-group">
                 <label for="RegistrantID" class="control-label">Registrant ID</label>
-                <input type="text" id="RegistrantID" name="RegistrantID" class="form-control" />
+                <input type="text" id="RegistrantID" name="RegistrantID" class="form-control" value="@ViewBag.RegistrantID" />
             </div>
 
             <div class="form-group">
                 <label for="TopicFlag" class="control-label">Issue Category</label>
-                <input type="text" id="TopicFlag" name="TopicFlag" class="form-control" />
+                <input type="text" id="TopicFlag" name="TopicFlag" class="form-control" value="@ViewBag.TopicFlag" />
             </div>
 
             <div class="form-group">
                 <label for="SummaryHtml" class="control-label">Description</label>
-                <input type="text" id="SummaryHtml" name="SummaryHtml" class="form-control" />
+                <input type="text" id="SummaryHtml" name="SummaryHtml" class="form-control" value="@ViewBag.SummaryHtml" />
             </div>
 
           <div class="col-md-6">
 
             <div class="form-group">
                 <label for="CallNotes" class="control-label">Notes</label>
-                <textarea id="CallNotes" name="CallNotes" class="form-control" rows="14" cols="20"></textarea>
+                <textarea id="CallNotes" name="CallNotes" class="form-control" rows="14" cols="20">@ViewBag.CallNotes</textarea>
             </div>
 
           </div>

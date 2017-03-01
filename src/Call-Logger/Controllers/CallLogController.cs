@@ -28,9 +28,18 @@ namespace Call_Logger.Controllers
               return View();
         }
 
-        [ActionName("Add"), HttpPost]
-        public ActionResult AddPost()
+        [HttpPost]
+        public ActionResult Add(int callID, string custRep, string callTS, string callStatus, int registrantID, string summaryHtml, string [] topicFlag, string callNotes)
         {
+            ViewBag.CallID = callID;
+            ViewBag.CustRep = custRep;
+            ViewBag.CallTS = callTS;
+            ViewBag.CallStatus = callStatus;
+            ViewBag.RegistrantID = registrantID;
+            ViewBag.SummaryHtml = summaryHtml;
+            ViewBag.TopicFlag = topicFlag;
+            ViewBag.CallNotes = callNotes;
+
             return View();
         }
 
