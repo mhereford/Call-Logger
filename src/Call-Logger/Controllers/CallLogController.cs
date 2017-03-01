@@ -28,6 +28,13 @@ namespace Call_Logger.Controllers
               return View();
         }
 
+        [ActionName("Add"), HttpPost]
+        public ActionResult AddPost()
+        {
+            return View();
+        }
+
+
         public ActionResult Detail(int? ID)
         {
             if (ID == null)
