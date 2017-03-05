@@ -13,16 +13,15 @@ namespace Call_Logger.Data
             new Call()
             {
                 CallID = 001,
-                CallTS = "2017-02-22",
                 CustRep = "Greg Sherman",
                 CallStatus = "Open",
                 RegistrantID = 200001,
                 SummaryHtml = "<p>VIS password reset.  Where's my money???</p>",
-                TopicFlags = new TopicFlag[]
+                TopicFlags = new TopicFlags []
                 {
-                    new TopicFlag() { Topic = "Restitution", TopicSelected = true },
-                    new TopicFlag() { Topic = "Opt-Out", TopicSelected = false },
-                    new TopicFlag() { Topic = "Cancel Phone Call", TopicSelected = false }
+                    new TopicFlags() { Topic = "Restitution", TopicSelected = true },
+                    new TopicFlags() { Topic = "Opt-Out", TopicSelected = false },
+                    new TopicFlags() { Topic = "Cancel Phone Call", TopicSelected = false }
                 },
                 CallNotes = null
             },
@@ -31,15 +30,14 @@ namespace Call_Logger.Data
             {
                 CallID = 002,
                 CustRep = "Greg Sherman",
-                CallTS = "2017-02-22",
                 CallStatus = "Closed",
                 RegistrantID = 200200,
                 SummaryHtml = "<p>Updated address and phone number.</p>",
-                TopicFlags = new TopicFlag[]
+                TopicFlags = new TopicFlags[]
                 {
-                    new TopicFlag() { Topic = "Restitution", TopicSelected = false },
-                    new TopicFlag() { Topic = "Opt-Out", TopicSelected = false },
-                    new TopicFlag() { Topic = "Cancel Phone Call", TopicSelected = false }
+                    new TopicFlags() { Topic = "Restitution", TopicSelected = false },
+                    new TopicFlags() { Topic = "Opt-Out", TopicSelected = false },
+                    new TopicFlags() { Topic = "Cancel Phone Call", TopicSelected = false }
                 }
             },
 
@@ -47,15 +45,14 @@ namespace Call_Logger.Data
             {
                 CallID = 003,
                 CustRep = "Chris Ashby",
-                CallTS = "2017-02-23",
                 CallStatus = "Closed",
                 RegistrantID = 3000000,
                 SummaryHtml = "<p>Requested to be opted out of VNS.</p>",
-                TopicFlags = new TopicFlag[]
+                TopicFlags = new TopicFlags[]
                 {
-                    new TopicFlag() { Topic = "Restitution", TopicSelected = false },
-                    new TopicFlag() { Topic = "Opt-Out", TopicSelected = true },
-                    new TopicFlag() { Topic = "Cancel Phone Call", TopicSelected = false }
+                    new TopicFlags() { Topic = "Restitution", TopicSelected = false },
+                    new TopicFlags() { Topic = "Opt-Out", TopicSelected = true },
+                    new TopicFlags() { Topic = "Cancel Phone Call", TopicSelected = false }
                 }
             }
         };

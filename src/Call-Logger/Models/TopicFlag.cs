@@ -5,7 +5,7 @@ using System.Web;
 
 namespace Call_Logger.Models
 {
-    public class TopicFlag
+    public class TopicFlags
     {
         public string Topic { get; set; }
         public bool TopicSelected { get; set; }

@@ -29,16 +29,16 @@ namespace Call_Logger.Controllers
         }
 
         [HttpPost]
-        public ActionResult Add(int callID, string custRep, string callTS, string callStatus, int registrantID, string summaryHtml, string [] topicFlag, string callNotes)
+        public ActionResult Add(int? callID, string custRep, DateTime? callTS, string callStatus, int? registrantID, string summaryHtml, string callNotes)
         {
-            ViewBag.CallID = callID;
-            ViewBag.CustRep = custRep;
-            ViewBag.CallTS = callTS;
-            ViewBag.CallStatus = callStatus;
-            ViewBag.RegistrantID = registrantID;
-            ViewBag.SummaryHtml = summaryHtml;
-            ViewBag.TopicFlag = topicFlag;
-            ViewBag.CallNotes = callNotes;
+
+            ViewBag.CallID = ModelState["CallID"].Value.AttemptedValue;
+            ViewBag.CustRep = ModelState["CustRep"].Value.AttemptedValue;
+            ViewBag.CallTS = ModelState["CallTS"].Value.AttemptedValue;
+            ViewBag.CallStatus = ModelState["CallStatus"].Value.AttemptedValue;
+            ViewBag.RegistrantID = ModelState["RegistrantID"].Value.AttemptedValue;
+            ViewBag.SummaryHtml = ModelState["SummaryHtml"].Value.AttemptedValue;
+            ViewBag.CallNotes = ModelState["CallNotes"].Value.AttemptedValue;
 
             return View();
         }
