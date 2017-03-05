@@ -5,35 +5,35 @@
 
 <h2>@ViewBag.Title</h2>
 
-<form method="post">
-
+@using (Html.BeginForm())
+{
     <div class="row">
 
         <div class="col-md-6">
 
             <div class="form-group">
-                <label for="CallID" class="control-label">Call ID</label>
-                <input type="text" id="CallID" name="CallID" class="form-control" value="@ViewBag.CallID" />
-            </div>
-            
-            <div class="form-group">
-                <label for="CallTS" class="control-label">Date</label>
-                <input type="text" id="CallTS" name="CallTS" class="form-control" value="@ViewBag.CallTS" />
-            </div>       
-
-            <div class="form-group">
-                <label for="CustRep" class="control-label">Operator</label>
-                <input type="text" id="CustRep" name="CustRep" class="form-control" value="@ViewBag.CustRep" />
+                @Html.Label("CallID", new { @class = "control-label" })
+                @Html.TextBox("CallID", null, new { @class = "form-control"})
             </div>
 
             <div class="form-group">
-                <label for="CallStatus" class="control-label">Call Status</label>
-                <input type="text" id="CallStatus" name="CallStatus" class="form-control" value="@ViewBag.CallStatus" />
+                @Html.Label("CallTS", new { @class = "control-label" })
+                @Html.TextBox("CallTS", null, new { @class = "form-control" })
+             </div>
+
+            <div class="form-group">
+                @Html.Label("CustRep", new { @class = "control-label" })
+                @Html.TextBox("CustRep", null, new { @class = "form-control" })
             </div>
 
             <div class="form-group">
-                <label for="RegistrantID" class="control-label">Registrant ID</label>
-                <input type="text" id="RegistrantID" name="RegistrantID" class="form-control" value="@ViewBag.RegistrantID" />
+                @Html.Label("CallStatus", new { @class = "control-label" })
+                @Html.TextBox("CallStatus", null, new { @class = "form-control" })
+            </div>
+
+            <div class="form-group">
+                @Html.Label("RegistrantID", new { @class = "control-label" })
+                @Html.TextBox("RegistrantID", null, new { @class = "form-control" })
             </div>
 
             <div class="form-group">
@@ -42,18 +42,18 @@
             </div>
 
             <div class="form-group">
-                <label for="SummaryHtml" class="control-label">Description</label>
-                <input type="text" id="SummaryHtml" name="SummaryHtml" class="form-control" value="@ViewBag.SummaryHtml" />
+                @Html.Label("SummaryHtml", new { @class = "control-label" })
+                @Html.TextBox("SummaryHtml", null, new { @class = "form-control" })
             </div>
 
-          <div class="col-md-6">
+            <div class="col-md-6">
 
-            <div class="form-group">
-                <label for="CallNotes" class="control-label">Notes</label>
-                <textarea id="CallNotes" name="CallNotes" class="form-control" rows="14" cols="20">@ViewBag.CallNotes</textarea>
+                <div class="form-group">
+                    @Html.Label("CallNotes", new { @class = "control-label" })
+                    @Html.TextArea("CallNotes", null, 14, 20, new { @class = "form-control" })
+                </div>
+
             </div>
-
-          </div>
 
             <div class="col-md-12">
                 <div class="pad-top">
@@ -67,5 +67,4 @@
             </div>
         </div>
     </div>
- </form>
-
+}
