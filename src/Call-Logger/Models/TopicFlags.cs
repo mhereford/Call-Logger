@@ -7,7 +7,7 @@ namespace Call_Logger.Models
 {
     public class TopicFlags
     {
-        public string Topic { get; set; }
+        public string TopicName { get; set; }
         public bool TopicSelected { get; set; }
     }
 }

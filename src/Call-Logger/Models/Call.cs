@@ -1,20 +1,24 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.ComponentModel.DataAnnotations;
 using System.Linq;
-using System.Web;
+using System.Text;
+using System.Threading.Tasks;
 
 namespace Call_Logger.Models
 {
     public class Call
     {
-        public TopicFlags[] TopicFlags;
-
-        public int CallID { get; set; }
-        public string CustRep { get; set; }
-        public DateTime CallTS { get; set; }
-        public string CallStatus { get; set; }
-        public int RegistrantID { get; set; }
-        public string SummaryHtml { get; set; }
-        public string CallNotes { get; set; }
+        public int ID { get; set; }
+        [Required]
+        public DateTime Call_TS { get; set; }
+        [Required, StringLength(100)]
+        public string Call_Rep { get; set; }
+        public int Registrant_ID { get; set; }
+        public string Call_Status { get; set; }
+        [Required, StringLength(500)]
+        public string Call_Summary { get; set; }
+        public string Call_Notes { get; set; }
+        public string[] Call_Topics { get; set; }
     }
 }

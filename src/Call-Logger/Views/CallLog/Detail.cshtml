@@ -4,24 +4,13 @@
     ViewBag.Title = "VNS Call Log Detail";
     ViewBag.ShowBackBar = true;
 }
-<h1>Call ID: @Model.CallID</h1>
-<h2>Operator: @Model.CustRep</h2>
-<h2>Date: @Model.CallTS</h2>
+<h1>Call ID: @Model.ID</h1>
+<h2>Operator: @Model.Call_Rep</h2>
+<h2>Date: @Model.Call_TS</h2>
         
-<h2>Status: @Model.CallStatus</h2>
-<h2>Registrant: @Model.RegistrantID</h2>
+<h2>Status: @Model.Call_Status</h2>
+<h2>Registrant: @Model.Registrant_ID</h2>
 <h4>Summary: </h4>
-<div>@Html.Raw(Model.SummaryHtml)</div>
-@if (Model.TopicFlags.Length > 0)
-{
-    <h5>Call Topics:</h5>
-    <div>
-        <ul>
-                @foreach (var topicFlag in Model.TopicFlags)
-            {
-                <li>@topicFlag.Topic: @topicFlag.TopicSelected</li>
-            }
-        </ul>
-    </div>
+<div>@Html.Raw(Model.Call_Summary)</div>
 }
 

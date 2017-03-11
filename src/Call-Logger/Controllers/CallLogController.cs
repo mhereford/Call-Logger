@@ -10,28 +10,44 @@ namespace Call_Logger.Controllers
 {
     public class CallLogController : Controller
     {
-        private CallLogRepository _callLogRepository = null;
+        private CallRepository _callRepository = null;
 
         public CallLogController()
         {
-            _callLogRepository = new CallLogRepository();
+            _callRepository = new CallRepository();
         }
 
         public ActionResult Index()
         {
-            var calls = _callLogRepository.GetCalls();
+            var calls = _callRepository.GetCalls();
             return View(calls);
         }
 
         public ActionResult Add()
         {
-              return View();
+            var call = new Call()
+            {
+                Call_TS = DateTime.Today,
+            };
+
+            ViewBag.StatiSelectListItems = new SelectList(
+                Data.Data.Stati, "Id", "Name");
+
+            return View(call);
         }
 
         [HttpPost]
-        public ActionResult Add(int? callID, string custRep, DateTime? callTS, string callStatus, int? registrantID, string summaryHtml, string callNotes)
+        public ActionResult Add(Call call)
         {
-            return View();
+            if (ModelState.IsValid)
+            {
+                _callRepository.AddCall(call);
+            }
+
+            ViewBag.StatiSelectListItems = new SelectList(
+                Data.Data.Stati, "Id", "Name");
+
+            return View(call);
         }
 
 
@@ -42,7 +58,7 @@ namespace Call_Logger.Controllers
                 return HttpNotFound();
             }
 
-            var call = _callLogRepository.GetCall((int)ID);
+            var call = _callRepository.GetCall((int)ID);
             return View(call);
         }
     }
