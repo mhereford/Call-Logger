@@ -101,6 +101,8 @@
     <Content Include="Content\site.css" />
     <Content Include="Fonts\glyphicons-halflings-regular.svg" />
     <Content Include="Global.asax" />
+    <Content Include="Scripts\bootstrap-datepicker.min.js" />
+    <Content Include="Content\bootstrap-datepicker3.min.css" />
     <Content Include="Scripts\bootstrap.min.js" />
     <None Include="Scripts\jquery-1.10.2.intellisense.js" />
     <Content Include="Scripts\jquery-1.10.2.js" />
