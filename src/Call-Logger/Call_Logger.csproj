@@ -146,6 +146,7 @@
     <Content Include="Views\CallLog\Add.cshtml" />
     <Content Include="Views\CallLog\Edit.cshtml" />
     <Content Include="Views\CallLog\_CallForm.cshtml" />
+    <Content Include="Views\CallLog\Delete.cshtml" />
     <None Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
     </None>
