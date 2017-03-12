@@ -144,6 +144,8 @@
     <Content Include="Fonts\glyphicons-halflings-regular.woff" />
     <Content Include="Scripts\jquery-1.10.2.min.map" />
     <Content Include="Views\CallLog\Add.cshtml" />
+    <Content Include="Views\CallLog\Edit.cshtml" />
+    <Content Include="Views\CallLog\_CallForm.cshtml" />
     <None Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
     </None>

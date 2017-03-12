@@ -44,5 +44,37 @@ namespace Call_Logger.Data
 
             Data.Calls.Add(call);
         }
+
+        public void UpdateCall(Call call)
+        {
+            // Find the index of the entry that we need to update.
+            int callIndex = Data.Calls.FindIndex(c => c.ID == call.ID);
+
+            if (callIndex == -1)
+            {
+                throw new Exception(
+                    string.Format("Unable to find a call with an ID of {0}", call.ID));
+            }
+
+            Data.Calls[callIndex] = call;
+        }
+
+        /// <summary>
+        /// Deletes an entry.
+        /// </summary>
+        /// <param name="id">The ID of the entry to delete.</param>
+        public void DeleteCall(int id)
+        {
+            // Find the index of the entry that we need to delete.
+            int callIndex = Data.Calls.FindIndex(c => c.ID == id);
+
+            if (callIndex == -1)
+            {
+                throw new Exception(
+                    string.Format("Unable to find a call with an ID of {0}", id));
+            }
+
+            Data.Calls.RemoveAt(callIndex);
+        }
     }
 }
