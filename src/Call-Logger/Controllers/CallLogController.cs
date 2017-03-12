@@ -41,7 +41,7 @@ namespace Call_Logger.Controllers
         {
             if (ModelState.IsValidField("Registrant_ID") && call.Registrant_ID > 0 )
             {
-                ModelState.AddModelError("Registrant_ID", "The Registrant ID filed is required.");
+                ModelState.AddModelError("Registrant_ID", "The Registrant ID field is required.");
             }
 
             if (ModelState.IsValid)
