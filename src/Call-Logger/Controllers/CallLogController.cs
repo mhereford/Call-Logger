@@ -39,6 +39,11 @@ namespace Call_Logger.Controllers
         [HttpPost]
         public ActionResult Add(Call call)
         {
+            if (ModelState.IsValidField("Registrant_ID") && call.Registrant_ID > 0 )
+            {
+                ModelState.AddModelError("Registrant_ID", "The Registrant ID filed is required.");
+            }
+
             if (ModelState.IsValid)
             {
                 _callRepository.AddCall(call);
