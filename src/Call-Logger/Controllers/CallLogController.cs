@@ -104,7 +104,27 @@ namespace Call_Logger.Controllers
                 return new HttpStatusCodeResult(HttpStatusCode.BadRequest);
             }
 
-            return View();
+            //Retrieve cal for the provided ID
+            Call call = _callRepository.GetCall((int)id);
+
+
+            //Return "NOT FOUND" if an entry wasn't found.
+            if (call == null)
+            {
+                return HttpNotFound();
+            }
+
+            return View(call);
+        }
+
+        
+        [HttpPost]
+        public ActionResult Delete(int id)
+        {
+            _callRepository.DeleteCall(id);
+
+            //redirect to list page
+            return RedirectToAction("Index");
         }
 
         public ActionResult Detail(int? ID)
@@ -117,7 +137,6 @@ namespace Call_Logger.Controllers
             var call = _callRepository.GetCall((int)ID);
             return View(call);
         }
-
         private void ValidateCall(Call call)
         {
             if (ModelState.IsValidField("Registrant_ID") && call.Registrant_ID > 0)
