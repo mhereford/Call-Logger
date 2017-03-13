@@ -46,8 +46,10 @@ namespace Call_Logger.Controllers
             if (ModelState.IsValid)
             {
                 _callRepository.AddCall(call);
+                TempData["Message"] = "Your call was successfully logged!";
+                return RedirectToAction("Index");
             }
-
+            
             SetupStatiSelectList();
 
             return View(call);
@@ -88,6 +90,7 @@ namespace Call_Logger.Controllers
             if (ModelState.IsValid)
             {
                 _callRepository.UpdateCall(call);
+                TempData["Message"] = "Your call was successfully updated!";
                 return RedirectToAction("Index");
             }
 
@@ -123,6 +126,7 @@ namespace Call_Logger.Controllers
         {
             _callRepository.DeleteCall(id);
 
+            TempData["Message"] = "Your call was successfully deleted!";
             //redirect to list page
             return RedirectToAction("Index");
         }
