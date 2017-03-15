@@ -22,6 +22,7 @@
         <th>Call ID</th>
         <th>Date</th>
         <th class="hidden-xs">Operator</th>
+        <th>Call Status</th>
         <th>Summary</th>
         <th>&nbsp;</th>
     </tr>
@@ -33,6 +34,7 @@
             <td>@call.ID</td>
             <td>@call.Call_TS</td>
             <td>@call.Call_Rep</td>
+            <td>@call.Call_Status</td>
             <td>@Html.Raw(call.Call_Summary)</td>
             <td>
                 <div class="pull-right">

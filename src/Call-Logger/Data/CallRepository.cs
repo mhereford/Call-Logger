@@ -1,7 +1,9 @@
-﻿using Call_Logger.Models;
+﻿
+using Call_Logger.Data;
+using Call_Logger.Models;
 using System;
-using System.Collections.Generic;
 using System.Linq;
+using Call_Logger;
 
 namespace Call_Logger.Data
 {
@@ -10,12 +12,15 @@ namespace Call_Logger.Data
         private static Call[] _calls = new Call[]
         {
         };
-            
+
 
         public Call[] GetCalls()
         {
-            return _calls;
-        }
+            using (var context = new Context())
+            {
+                return context.Call.ToArray();
+            }
+        } 
 
 
         public Call GetCall(int ID)
@@ -34,21 +39,24 @@ namespace Call_Logger.Data
             return callToReturn;
         }
 
+
         public void AddCall(Call call)
-        {
+        {            
             // Get the next available call ID.
-            int nextAvailableId = Data.Calls
-                .Max(c => c.ID) + 1;
+            int nextAvailableId = context.Calls.Max(c => c.ID) + 1;
 
             call.ID = nextAvailableId;
-
-            Data.Calls.Add(call);
+            using (var context = new Context())
+            {
+                context.Call.Add(call);
+                context.SaveChanges();
+            }
         }
 
         public void UpdateCall(Call call)
         {
             // Find the index of the entry that we need to update.
-            int callIndex = Data.Calls.FindIndex(c => c.ID == call.ID);
+            int callIndex = context.Calls.FindIndex(c => c.ID == call.ID);
 
             if (callIndex == -1)
             {
@@ -56,7 +64,7 @@ namespace Call_Logger.Data
                     string.Format("Unable to find a call with an ID of {0}", call.ID));
             }
 
-            Data.Calls[callIndex] = call;
+            context.Calls[callIndex] = call;
         }
 
         /// <summary>
@@ -66,7 +74,7 @@ namespace Call_Logger.Data
         public void DeleteCall(int id)
         {
             // Find the index of the entry that we need to delete.
-            int callIndex = Data.Calls.FindIndex(c => c.ID == id);
+            int callIndex = context.Calls.FindIndex(c => c.ID == id);
 
             if (callIndex == -1)
             {
@@ -74,7 +82,7 @@ namespace Call_Logger.Data
                     string.Format("Unable to find a call with an ID of {0}", id));
             }
 
-            Data.Calls.RemoveAt(callIndex);
+            context.Calls.RemoveAt(callIndex);
         }
     }
 }

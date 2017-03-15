@@ -1,4 +1,3 @@
-using System.Collections;
 using System.Collections.Generic;
 using Call_Logger.Models;
 using Call_Tracker.Models;
@@ -12,7 +11,7 @@ namespace Call_Logger.Data
     /// example of how to do data persistence, but rather as workaround for
     /// not having a database to persist data to.
     /// </summary>
-    public static class Data
+    public static class context
     {
         public static List<Status> Stati { get; set; }
 
@@ -24,7 +23,7 @@ namespace Call_Logger.Data
         /// <summary>
         /// Static constructor used to initialize the data.
         /// </summary>
-        static Data()
+        static context()
         {
             InitData();
         }

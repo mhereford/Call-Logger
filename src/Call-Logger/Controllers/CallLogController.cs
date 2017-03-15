@@ -69,7 +69,7 @@ namespace Call_Logger.Controllers
 
             if (call == null)
             {
-                return HttpNotFound();
+             return HttpNotFound();
             }
             //Return a status of NOt found
             //TODO Pass the entry to the view
@@ -141,18 +141,21 @@ namespace Call_Logger.Controllers
             var call = _callRepository.GetCall((int)ID);
             return View(call);
         }
+
+
         private void ValidateCall(Call call)
         {
-            if (ModelState.IsValidField("Registrant_ID") && call.Registrant_ID > 0)
+            if (ModelState.IsValidField("Registrant_ID") == false && call.Registrant_ID <= 0)
             {
                 ModelState.AddModelError("Registrant_ID", "The Registrant ID field is required.");
             }
         }
 
+
         private void SetupStatiSelectList()
         {
             ViewBag.StatiSelectListItems = new SelectList(
-                            Data.Data.Stati, "Id", "Name");
+                            Data.context.Stati, "Id", "Name");
         }
     }
 }
