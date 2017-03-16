@@ -5,6 +5,7 @@ using System;
 using System.Linq;
 using Call_Logger;
 
+
 namespace Call_Logger.Data
 {
     public class CallRepository
@@ -25,8 +26,13 @@ namespace Call_Logger.Data
 
         public Call GetCall(int ID)
         {
-            Call callToReturn = null;
+            using (var context = new Context())
+            {
+                _calls = context.Call.ToArray();
+            }
 
+            Call callToReturn = null;
+            
             foreach (var call in _calls)
             {
                 if (call.ID == ID)
@@ -55,6 +61,7 @@ namespace Call_Logger.Data
 
         public void UpdateCall(Call call)
         {
+
             // Find the index of the entry that we need to update.
             int callIndex = context.Calls.FindIndex(c => c.ID == call.ID);
 
@@ -65,8 +72,9 @@ namespace Call_Logger.Data
             }
 
             context.Calls[callIndex] = call;
-        }
 
+          }
+        
         /// <summary>
         /// Deletes an entry.
         /// </summary>

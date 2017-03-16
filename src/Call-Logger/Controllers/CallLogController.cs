@@ -59,7 +59,7 @@ namespace Call_Logger.Controllers
 
         public ActionResult Edit(int? id)
         {
-            if (id == null)
+          if (id == null)
             {
                 return new HttpStatusCodeResult(HttpStatusCode.BadRequest);
             }
