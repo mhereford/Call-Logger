@@ -1,10 +1,6 @@
-﻿
-using Call_Logger.Data;
-using Call_Logger.Models;
-using System;
+﻿using Call_Logger.Models;
 using System.Linq;
-using Call_Logger;
-
+using System.Data.Entity;
 
 namespace Call_Logger.Data
 {
@@ -52,45 +48,44 @@ namespace Call_Logger.Data
             int nextAvailableId = context.Calls.Max(c => c.ID) + 1;
 
             call.ID = nextAvailableId;
-            using (var context = new Context())
+            
+            using (Context context = GetContext())
             {
                 context.Call.Add(call);
                 context.SaveChanges();
             }
         }
 
+        
         public void UpdateCall(Call call)
         {
-
-            // Find the index of the entry that we need to update.
-            int callIndex = context.Calls.FindIndex(c => c.ID == call.ID);
-
-            if (callIndex == -1)
+            using (Context context =  GetContext())
             {
-                throw new Exception(
-                    string.Format("Unable to find a call with an ID of {0}", call.ID));
+                context.Call.Attach(call);
+                context.Entry(call).State = EntityState.Modified;
+                context.SaveChanges();
             }
-
-            context.Calls[callIndex] = call;
-
-          }
-        
+        }
         /// <summary>
         /// Deletes an entry.
         /// </summary>
         /// <param name="id">The ID of the entry to delete.</param>
         public void DeleteCall(int id)
         {
-            // Find the index of the entry that we need to delete.
-            int callIndex = context.Calls.FindIndex(c => c.ID == id);
-
-            if (callIndex == -1)
+            using (Context context = GetContext())
             {
-                throw new Exception(
-                    string.Format("Unable to find a call with an ID of {0}", id));
+                Call call = context.Call.Find(id);
+                context.Call.Remove(call);
+                context.SaveChanges();
             }
-
-            context.Calls.RemoveAt(callIndex);
         }
+
+        static Context GetContext()
+        {
+            var context = new Context();
+            return context;
+        }
+
+
     }
 }

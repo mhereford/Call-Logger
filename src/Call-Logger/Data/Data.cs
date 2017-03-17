@@ -1,19 +1,12 @@
 using System.Collections.Generic;
 using Call_Logger.Models;
-using Call_Tracker.Models;
+
 
 namespace Call_Logger.Data
 {
-    /// <summary>
-    /// Provides an in-memory data store.
-    /// 
-    /// Note: The code in this class is not to be considered a "best practice" 
-    /// example of how to do data persistence, but rather as workaround for
-    /// not having a database to persist data to.
-    /// </summary>
     public static class context
     {
-        public static List<Status> Stati { get; set; }
+       public static List<Status> Stati { get; set; }
 
         /// <summary>
         /// The collection of calls.
@@ -65,7 +58,7 @@ namespace Call_Logger.Data
                 {
                     ID = 003,
                     Call_Rep = "Chris Ashby",
-                    Call_Status = "Closed",
+                    Call_Status = "Open",
                     Registrant_ID = 3000000,
                     Call_Summary = "<p>Requested to be opted out of VNS.</p>",
                     Call_Notes = null

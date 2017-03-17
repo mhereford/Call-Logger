@@ -4,7 +4,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace Call_Tracker.Models
+namespace Call_Logger.Models
 {
     public class Status
     {
@@ -19,7 +19,7 @@ namespace Call_Tracker.Models
         {
             Id = (int)statusType;
 
-            Name = name ?? statusType.ToString();
+            name = name ?? statusType.ToString();
         }
 
         public int Id { get; set; }
