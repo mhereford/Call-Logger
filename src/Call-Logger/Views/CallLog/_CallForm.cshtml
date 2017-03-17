@@ -2,6 +2,29 @@
 @using Call_Logger.Models
 
 
+@{
+    var selectListItems = new[]
+    {
+
+        new SelectListItem() { Value = "Open", Text = "Open", Selected = true },
+        new SelectListItem() { Value = "Hold", Text = "Hold", Selected = false },
+        new SelectListItem() { Value = "Closed", Text = "Closed", Selected = false }
+    };
+
+    var selectListReps = new[]
+    {
+        new SelectListItem() { Value = "Luz Acosta", Text = "Luz Acosta", Selected = true },
+        new SelectListItem() { Value = "Chris Ashby", Text = "Chris Ashby", Selected = false },
+        new SelectListItem() { Value = "Maren Boehm", Text = "Maren Boehm", Selected = false },
+        new SelectListItem() { Value = "Carlos Herrera", Text = "Carlos Herrera", Selected = false },
+        new SelectListItem() { Value = "Trina Hinkle", Text = "Trena Hinkle", Selected = false },
+        new SelectListItem() { Value = "Veronica Lindsey", Text = "Veronica Lindsey", Selected = false },
+        new SelectListItem() { Value = "Alice Roques", Text = "Alice Roques", Selected = false },
+        new SelectListItem() { Value = "Greg Sherman", Text = "Greg Sherman", Selected = false },
+        new SelectListItem() { Value = "Yasilda Stoner", Text = "Yasilda Stoner", Selected = false }
+    };
+}
+
 @using (Html.BeginForm())
 {
     @Html.ValidationSummary("The following errors were found:", new { @class = "alert alert-danger" })
@@ -22,12 +45,12 @@
 
             <div class="form-group">
                 @Html.LabelFor(m => m.Call_Rep, new { @class = "control-label" })
-                @Html.TextBoxFor(m => m.Call_Rep, new { @class = "form-control" })
+                @Html.DropDownListFor(m => m.Call_Rep, selectListReps, new { @class = "form-control" })
             </div>
 
             <div class="form-group">
                 @Html.LabelFor(m => m.Call_Status, new { @class = "control-label" })
-                @Html.DropDownListFor(m => m.Call_Status, (SelectList)ViewBag.StatiSelectListItems, new { @class = "form-control" })
+                @Html.DropDownListFor(m => m.Call_Status, selectListItems, new { @class = "form-control" })
             </div>
 
             <div class="form-group">

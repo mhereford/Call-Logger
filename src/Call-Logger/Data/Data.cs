@@ -1,14 +1,12 @@
 using System.Collections.Generic;
 using Call_Logger.Models;
-
+using System.Web.Mvc;
 
 namespace Call_Logger.Data
 {
     public static class context
     {
-       public static List<Status> Stati { get; set; }
-
-        /// <summary>
+         /// <summary>
         /// The collection of calls.
         /// </summary>
         public static List<Call> Calls { get; set; }
@@ -23,14 +21,8 @@ namespace Call_Logger.Data
 
         private static void InitData()
         {
-
-            var stati = new List<Status>()
-            {
-                new Status(Status.StatusType.Open),
-                new Status(Status.StatusType.Hold),
-                new Status(Status.StatusType.Closed)
-            };
-
+            
+                
             var calls = new List<Call>()
             {
                 new Call()
@@ -65,8 +57,7 @@ namespace Call_Logger.Data
                 }
             };
 
-            Stati = stati;
-            Calls = calls;
+           Calls = calls;
         }
     }
 }

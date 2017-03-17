@@ -28,8 +28,6 @@ namespace Call_Logger.Controllers
                 Call_TS = DateTime.Today,
             };
 
-            SetupStatiSelectList();
-
             return View(call);
         }
 
@@ -46,8 +44,6 @@ namespace Call_Logger.Controllers
                 TempData["Message"] = "Your call was successfully logged!";
                 return RedirectToAction("Index");
             }
-            
-            SetupStatiSelectList();
 
             return View(call);
         }
@@ -70,8 +66,6 @@ namespace Call_Logger.Controllers
             }
             //Return a status of NOt found
             //TODO Pass the entry to the view
-            SetupStatiSelectList();
-
             return View(call);
         }
 
@@ -91,7 +85,6 @@ namespace Call_Logger.Controllers
                 return RedirectToAction("Index");
             }
 
-            SetupStatiSelectList();
             //populate the select list
 
             return View(call);
@@ -146,13 +139,6 @@ namespace Call_Logger.Controllers
             {
                 ModelState.AddModelError("Registrant_ID", "The Registrant ID field is required.");
             }
-        }
-
-
-        private void SetupStatiSelectList()
-        {
-            ViewBag.StatiSelectListItems = new SelectList(
-                            Data.context.Stati, "Id", "Name");
         }
     }
 }
