@@ -9,7 +9,7 @@ Call-Logger is an MVC web application built with C#/.Net Framework using Visual 
 
 To Run:
   1. Clone Repository to a local repository:
-
+        https://github.com/mhereford/Call-Logger.git
   2. Open Repository in Visual Studio Community Edition 2015.
   3. Select to run the application in the browser of your choice.
 
