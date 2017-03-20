@@ -27,7 +27,7 @@ namespace Call_Logger.Data
             {
                 new Call()
                 {
-                    ID = 001,
+                    ID = 100,
                     Call_Rep = "Greg Sherman",
                     Call_Status = "Open",
                     Registrant_ID = 200001,
@@ -37,8 +37,8 @@ namespace Call_Logger.Data
 
                 new Call()
                 {
-                   ID = 002,
-                    Call_Rep = "Greg Sherman",
+                   ID = 101,
+                    Call_Rep = "Luz Acosta",
                     Call_Status = "Closed",
                     Registrant_ID = 200200,
                     Call_Summary = "<p>Updated address and phone number.</p>",
@@ -48,13 +48,23 @@ namespace Call_Logger.Data
 
                 new Call()
                 {
-                    ID = 003,
+                    ID = 102,
                     Call_Rep = "Chris Ashby",
                     Call_Status = "Open",
                     Registrant_ID = 3000000,
                     Call_Summary = "<p>Requested to be opted out of VNS.</p>",
                     Call_Notes = null
-                }
+                },
+
+                new Call()
+                {
+                    ID = 103,
+                    Call_Rep = "Luz Acosta",
+                    Call_Status = "Open",
+                    Registrant_ID = 200001,
+                    Call_Summary = "<p>VIS password reset.</p>",
+                    Call_Notes = "Registrant forgot password for VIS."
+                },
             };
 
            Calls = calls;

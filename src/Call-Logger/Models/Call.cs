@@ -6,7 +6,7 @@ namespace Call_Logger.Models
     public class Call
     {
         public int ID { get; set; }
-        [Required]
+        [Required, ]
         public DateTime Call_TS { get; set; }
         [Required, StringLength(100)]
         public string Call_Rep { get; set; }

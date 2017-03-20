@@ -25,7 +25,7 @@ namespace Call_Logger.Controllers
         {
             var call = new Call()
             {
-                Call_TS = DateTime.Today,
+                Call_TS = DateTime.Now,
             };
 
             return View(call);

@@ -13,7 +13,8 @@
 
     var selectListReps = new[]
     {
-        new SelectListItem() { Value = "Luz Acosta", Text = "Luz Acosta", Selected = true },
+        new SelectListItem() { Value = null, Text = null, Selected = true },
+        new SelectListItem() { Value = "Luz Acosta", Text = "Luz Acosta", Selected = false },
         new SelectListItem() { Value = "Chris Ashby", Text = "Chris Ashby", Selected = false },
         new SelectListItem() { Value = "Maren Boehm", Text = "Maren Boehm", Selected = false },
         new SelectListItem() { Value = "Carlos Herrera", Text = "Carlos Herrera", Selected = false },
@@ -34,8 +35,8 @@
         <div class="col-md-6">
 
             <div class="form-group">
-                @Html.LabelFor(m => m.ID, new { @class = "control-label" })
-                @Html.TextBoxFor(m => m.ID, new { @class = "form-control" })
+                    @Html.LabelFor(m => m.ID, new { @class = "control-label" })
+                    @Html.TextBoxFor(m => m.ID, new { @class = "form-control" })
             </div>
 
             <div class="form-group">
@@ -57,39 +58,31 @@
                 @Html.LabelFor(m => m.Registrant_ID, new { @class = "control-label" })
                 @Html.TextBoxFor(m => m.Registrant_ID, new { @class = "form-control" })
             </div>
+            
+        </div>
+        
+        <div class="col-md-6">
 
             <div class="form-group">
                 @Html.LabelFor(m => m.Call_Summary, new { @class = "control-label" })
                 @Html.TextBoxFor(m => m.Call_Summary, new { @class = "form-control" })
             </div>
 
-            @* Add Category check boxes here.
-                    <div class="form-group">
-                    <div class="checkbox">
-                        <label>
-                            @Html.CheckBoxFor(m => m.Category) @Html.DisplayNameFor(m => m.Category)
-                        </label>
-                    </div>
-                </div>*@
-
-            <div class="col-md-6">
-
-                <div class="form-group">
-                    @Html.LabelFor(m => m.Call_Notes, new { @class = "control-label" })
-                    @Html.TextAreaFor(m => m.Call_Notes, 14, 20, new { @class = "form-control" })
-                </div>
-
+            <div class="form-group">
+                @Html.LabelFor(m => m.Call_Notes, new { @class = "control-label" })
+                @Html.TextAreaFor(m => m.Call_Notes, 14, 20, new { @class = "form-control" })
             </div>
 
-            <div class="col-md-12">
-                <div class="pad-top">
-                    <button type="submit" class="btn btn-success btn-lg margin-right">
-                        <span class="glyphicon glyphicon-save"></span> Save
-                    </button>
-                    <a href="@Url.Action("Index")" class="btn btn-warning btn-lg">
-                        <span class="glyphicon glyphicon-remove"></span> Cancel
-                    </a>
-                </div>
+        </div>
+
+        <div class="col-md-12">
+            <div class="pad-top">
+                <button type="submit" class="btn btn-success btn-lg margin-right">
+                    <span class="glyphicon glyphicon-save"></span> Save
+                </button>
+                <a href="@Url.Action("Index")" class="btn btn-warning btn-lg">
+                    <span class="glyphicon glyphicon-remove"></span> Cancel
+                </a>
             </div>
         </div>
     </div>
