@@ -5,12 +5,20 @@
     ViewBag.ShowBackBar = true;
 }
 <h1>Call ID: @Model.ID</h1>
-<h2>Operator: @Model.Call_Rep</h2>
+<h3>Operator: @Model.Call_Rep</h3>
 <h2>Date: @Model.Call_TS</h2>
         
-<h2>Status: @Model.Call_Status</h2>
-<h2>Registrant: @Model.Registrant_ID</h2>
-<h4>Summary: </h4>
-<div>@Html.Raw(Model.Call_Summary)</div>
-}
+<h3>Status: @Model.Call_Status</h3>
+<h3>Registrant: @Model.Registrant_ID</h3>
+
+<h1>____________________________</h1>
+<br />
+<div>
+    <h3>Summary: </h3>
+    <div>@Html.Raw(Model.Call_Summary)</div>
+    <h3>Notes: </h3>
+    <div>@Model.Call_Notes</div>
+</div>
+
+
 

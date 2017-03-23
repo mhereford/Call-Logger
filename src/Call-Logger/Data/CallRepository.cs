@@ -1,12 +1,14 @@
 ﻿using Call_Logger.Models;
 using System.Linq;
 using System.Data.Entity;
+using System.Collections.Generic;
 
 namespace Call_Logger.Data
 {
+    
     public class CallRepository
     {
-        private static Call[] _calls = new Call[]
+       private static Call[] _calls = new Call[]
         {
         };
 
@@ -85,7 +87,5 @@ namespace Call_Logger.Data
             var context = new Context();
             return context;
         }
-
-
     }
 }

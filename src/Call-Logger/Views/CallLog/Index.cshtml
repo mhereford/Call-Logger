@@ -29,25 +29,27 @@
 
     @foreach (var call in Model)
     {
-
-        <tr>
-            <td>@call.ID</td>
-            <td>@call.Call_TS</td>
-            <td>@call.Call_Rep</td>
-            <td>@call.Call_Status</td>
-            <td>@Html.Raw(call.Call_Summary)</td>
-            <td>
-                <div class="pull-right">
-                    <a href="@Url.Action("Edit", new { id = call.ID })" class="btn btn-warning btn-sm margin-right">
-                        <span class="glyphicon glyphicon-edit"></span><span class="hidden-xs"> Edit</span>
-                    </a>
-                    <a href="@Url.Action("Delete", new { id = call.ID })" class="btn btn-danger btn-sm">
-                        <span class="glyphicon glyphicon-trash"></span><span class="hidden-xs"> Delete</span>
-                    </a>
-                </div>
-            </td>
-        </tr>        
-    }
-    </table>
+            <tr>
+                <td>@call.ID</td>
+                <td>@call.Call_TS</td>
+                <td>@call.Call_Rep</td>
+                <td>@call.Call_Status</td>
+                <td>@Html.Raw(call.Call_Summary)</td>
+                <td>
+                    <div class="pull-right">
+                        <a href="@Url.Action("Detail", new { id = call.ID })" class="btn btn-success btn-sm margin-right">
+                            <span class="glyphicon glyphicon-info-sign"></span><span class="hidden-xs"> Detail</span>
+                        </a>
+                        <a href="@Url.Action("Edit", new { id = call.ID })" class="btn btn-danger btn-sm margin-right">
+                            <span class="glyphicon glyphicon-edit"></span><span class="hidden-xs"> Edit</span>
+                        </a>
+                        <a href="@Url.Action("Delete", new { id = call.ID })" class="btn btn-primary btn-sm">
+                            <span class="glyphicon glyphicon-trash"></span><span class="hidden-xs"> Delete</span>
+                        </a>
+                    </div>
+                </td>
+            </tr>
+            }
+</table>
 
     

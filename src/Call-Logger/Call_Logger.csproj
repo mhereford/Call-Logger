@@ -126,6 +126,7 @@
     <Compile Include="App_Start\RouteConfig.cs" />
     <Compile Include="Context.cs" />
     <Compile Include="Controllers\CallLogController.cs" />
+    <Compile Include="DatabaseInitializer.cs" />
     <Compile Include="Data\CallRepository.cs" />
     <Compile Include="Data\Data.cs" />
     <Compile Include="Global.asax.cs">

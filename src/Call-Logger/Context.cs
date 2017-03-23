@@ -1,5 +1,6 @@
 ﻿using System.Data.Entity;
 using Call_Logger.Models;
+using System.Collections.Generic;
 
 namespace Call_Logger
 {
@@ -7,11 +8,11 @@ namespace Call_Logger
     {
         public Context()
         {
-            Database.SetInitializer(new DropCreateDatabaseIfModelChanges<Context>());
+            Database.SetInitializer(new DatabaseInitializer());
         }
-
+        
         public DbSet<Call> Call { get; set; }
-    }
+    }    
 }
 
 
