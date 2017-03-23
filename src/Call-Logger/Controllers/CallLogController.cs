@@ -3,6 +3,8 @@ using System.Web.Mvc;
 using Call_Logger.Models;
 using Call_Logger.Data;
 using System.Net;
+using System.Linq;
+using System.Collections;
 
 namespace Call_Logger.Controllers
 {
@@ -57,15 +59,16 @@ namespace Call_Logger.Controllers
                 return new HttpStatusCodeResult(HttpStatusCode.BadRequest);
             }
 
-            //TODO Get the requested entry from the repository
+            //Get the requested call from the repository
             Call call = _callRepository.GetCall((int)id);
 
             if (call == null)
             {
-             return HttpNotFound();
+                //Return a status of NOt found
+                return HttpNotFound();
             }
-            //Return a status of NOt found
-            //TODO Pass the entry to the view
+            
+            //Pass the call to the view
             return View(call);
         }
 

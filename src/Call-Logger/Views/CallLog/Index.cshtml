@@ -17,18 +17,21 @@
     </div>
 }
 
-<table class="table">
-    <tr>
-        <th>Call ID</th>
-        <th>Date</th>
-        <th class="hidden-xs">Operator</th>
-        <th>Call Status</th>
-        <th>Summary</th>
-        <th>&nbsp;</th>
-    </tr>
-
-    @foreach (var call in Model)
-    {
+<table id="keywords" cellspacing="0" cellpadding="0" class="table">
+    <thead class="th.headerSortUp th.headerSortDown">
+        <tr>
+            <th>ID</th>
+            <th>Date/Time</th>
+            <th> Operator</th>
+            <th>Status</th>
+            <th>Summary</th>
+            <th class="glyphicon glyphicon-sort-by-order">&nbsp;</th>
+        </tr>
+    </thead>
+    
+    <tbody>
+        @foreach (var call in Model)
+        {
             <tr>
                 <td>@call.ID</td>
                 <td>@call.Call_TS</td>
@@ -49,7 +52,10 @@
                     </div>
                 </td>
             </tr>
-            }
+        }
+    </tbody>
 </table>
+
+
 
     

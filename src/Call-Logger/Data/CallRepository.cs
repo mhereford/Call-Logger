@@ -19,8 +19,7 @@ namespace Call_Logger.Data
             {
                 return context.Call.ToArray();
             }
-        } 
-
+        }
 
         public Call GetCall(int ID)
         {
