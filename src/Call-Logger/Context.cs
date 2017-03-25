@@ -12,6 +12,7 @@ namespace Call_Logger
         }
         
         public DbSet<Call> Call { get; set; }
+
     }    
 }
 

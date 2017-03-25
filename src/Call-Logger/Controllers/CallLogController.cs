@@ -4,7 +4,6 @@ using Call_Logger.Models;
 using Call_Logger.Data;
 using System.Net;
 using System.Linq;
-using System.Collections;
 
 namespace Call_Logger.Controllers
 {
@@ -23,7 +22,7 @@ namespace Call_Logger.Controllers
             return View(calls);
         }
 
-        public ActionResult Add()
+       public ActionResult Add()
         {
             var call = new Call()
             {

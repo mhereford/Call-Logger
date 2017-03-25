@@ -34,8 +34,6 @@
 #keywords thead tr th.headerSortDown span {
   background-image: url("../Images/down-arrow.png");
 }
-
-
 #keywords tbody tr { 
   color: #555;
 }
@@ -45,4 +43,5 @@
 }
 #keywords tbody tr td.lalign {
   text-align: left;
+}
 }

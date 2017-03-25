@@ -21,6 +21,7 @@
     <link href="~/Content/bootstrap-datepicker3.min.css" rel="stylesheet" type="text/css" />
     <link href="~/Content/styles.css" rel="stylesheet" type="text/css" />
     <link href="~/Content/site.css" rel="stylesheet" type="text/css" />
+    <link href="~/Content/jquery.dataTables.min.css" rel="stylesheet" type="text/css" />
     <script src="~/Scripts/modernizr-2.6.2.js"></script>
 </head>
 <body>
@@ -77,10 +78,10 @@
             format: 'm/d/yyyy'
         });
     </script>
-    <script src="~/Scripts/jquery.tablesorter.min.js"></script>
+    <script src="~/Scripts/jquery.dataTables.min.js"></script>
     <script>
         $(document).ready(function () {
-            $('#keywords').tablesorter();
+            $('#calltable').DataTable();
         });
     </script>
 </body>

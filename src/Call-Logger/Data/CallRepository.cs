@@ -21,6 +21,39 @@ namespace Call_Logger.Data
             }
         }
 
+        public Call[] GetCallsByStatus(string status)
+        {
+            using (var context = new Context())
+            {
+                var callStatus = status;
+                if(callStatus == "All")
+                {
+                    return context.Call.ToArray();
+                }
+                else if(callStatus == "Open")
+                {
+                    var calls = context.Call
+                      .Where(c => c.Call_Status == "Open")
+                      .ToArray();
+                    return (calls);
+                }
+                else if (callStatus == "Hold")
+                {
+                    var calls = context.Call
+                      .Where(c => c.Call_Status == "Hold")
+                      .ToArray();
+                    return (calls);
+                }
+                else 
+                {
+                    var calls = context.Call
+                      .Where(c => c.Call_Status == "Closed")
+                      .ToArray();
+                    return (calls);
+                }
+            }
+        }
+
         public Call GetCall(int ID)
         {
             using (var context = new Context())
