@@ -9,6 +9,16 @@
 <h2>@ViewBag.Title</h2>
 <br />
 
+@{
+    ViewBag.Title = "LoggedIn";
+}
+
+@if (Session["UserID"] != null)
+{
+    <h4>Hello @Session["Username"].ToString()</h4>
+}
+
+
     @if (TempData["Message"] != null)
     {
         <div class="alert alert-success alert-dismissible" role="alert">

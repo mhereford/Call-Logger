@@ -18,7 +18,7 @@ namespace Call_Logger
                 Call_Status = "Open",
                 Registrant_ID = 200001,
                 Call_Summary = "VIS password reset and restitution question.",
-               Notes = "Registrant wanted to check status of their restution, but forgot password."
+               Call_Notes = "Registrant wanted to check status of their restution, but forgot password."
            };
             context.Call.Add(call1);
 
@@ -30,7 +30,7 @@ namespace Call_Logger
                 Call_Status = "Closed",
                 Registrant_ID = 200200,
                 Call_Summary = "Updated address and phone number.",
-                Notes = "Registrant moved and wanted to update contact information.  New phone number and home address added."
+                Call_Notes = "Registrant moved and wanted to update contact information.  New phone number and home address added."
             };
             context.Call.Add(call2);
 
@@ -42,7 +42,7 @@ namespace Call_Logger
                 Call_Status = "Open",
                 Registrant_ID = 3000000,
                 Call_Summary = "Requested to be opted out of VNS.",
-                Notes = "Registrant no longer wants to recieve notifictions from VNS.  Opted-Out as Contact Choice."
+                Call_Notes = "Registrant no longer wants to recieve notifictions from VNS.  Opted-Out as Contact Choice."
             };
             context.Call.Add(call3);
 
@@ -54,7 +54,7 @@ namespace Call_Logger
                 Call_Status = "Open",
                 Registrant_ID = 200001,
                 Call_Summary = "VIS password reset.",
-                Notes = "Registrant forgot VIS password.  Password reset."
+                Call_Notes = "Registrant forgot VIS password.  Password reset."
             };
             context.Call.Add(call4);
 

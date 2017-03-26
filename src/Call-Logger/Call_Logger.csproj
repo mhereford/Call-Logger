@@ -105,6 +105,7 @@
     <Content Include="Images\up-arrow.png" />
     <Content Include="Fonts\glyphicons-halflings-regular.svg" />
     <Content Include="Global.asax" />
+    <Content Include="Login.aspx" />
     <Content Include="Scripts\bootstrap-datepicker.min.js" />
     <Content Include="Content\bootstrap-datepicker3.min.css" />
     <Content Include="Scripts\bootstrap.min.js" />
@@ -131,6 +132,7 @@
   <ItemGroup>
     <Compile Include="App_Start\RouteConfig.cs" />
     <Compile Include="Context.cs" />
+    <Compile Include="Controllers\AccountController.cs" />
     <Compile Include="Controllers\CallLogController.cs" />
     <Compile Include="DatabaseInitializer.cs" />
     <Compile Include="Data\CallRepository.cs" />
@@ -138,7 +140,16 @@
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
+    <Compile Include="Login.aspx.cs">
+      <DependentUpon>Login.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Login.aspx.designer.cs">
+      <DependentUpon>Login.aspx</DependentUpon>
+    </Compile>
     <Compile Include="Models\Call.cs" />
+    <Compile Include="Models\CallDBContext.cs" />
+    <Compile Include="Models\UserAccount.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
@@ -153,6 +164,9 @@
     <Content Include="Views\CallLog\Edit.cshtml" />
     <Content Include="Views\CallLog\_CallForm.cshtml" />
     <Content Include="Views\CallLog\Delete.cshtml" />
+    <Content Include="Views\Account\Register.cshtml" />
+    <Content Include="Views\Account\Login.cshtml" />
+    <Content Include="Views\Account\LoggedIn.cshtml" />
     <None Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
     </None>

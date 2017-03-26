@@ -30,7 +30,7 @@ namespace Call_Logger.Data
                     Call_Status = "Open",
                     Registrant_ID = 200001,
                     Call_Summary = "<p>VIS password reset.  Where's my money???</p>",
-                    Notes = null
+                    Call_Notes = null
                 }
             };
             Calls = calls;

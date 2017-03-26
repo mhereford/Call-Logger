@@ -16,6 +16,6 @@ namespace Call_Logger.Models
         [Required, StringLength(200)]
         public string Call_Summary { get; set; }
         [MaxLength(500, ErrorMessage = "The Notes Field cannot be longer than 500 characters.")]
-        public string Notes { get; set; }
+        public string Call_Notes { get; set; }
     }
 }
