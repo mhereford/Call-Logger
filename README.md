@@ -12,5 +12,10 @@ To Run:
         https://github.com/mhereford/Call-Logger.git
   2. Open Repository in Visual Studio Community Edition 2015.
   3. Select to run the application in the browser of your choice.
+  4. Register for an account.
+  5. Navigate to Login page and login with your credentials.
+  6. CRUD Operations are available.  You can add your own tickets or perform operations against seed data.
 
 Call-Logger allows for the addition of new calls, editing and deleting of existing calls.  The landing screen contains a link to the Add screen and a list of all calls in the database.  Each existig call in the table cotntains links to the Edit and Delete Pages to complete those operations.  The application will validate for missing required fields and report messages to the user.  The application will also provide feedback to the user if their CRUD operation is successful.
+
+Utilzed jquery plugin, TableData, for filtering, column sorting and pagination on List/Index screen.
