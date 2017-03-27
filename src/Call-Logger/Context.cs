@@ -1,6 +1,7 @@
 ﻿using System.Data.Entity;
 using Call_Logger.Models;
-using System.Collections.Generic;
+
+//PRIMARY CONTEXT FOR CALL-LOGGER APP
 
 namespace Call_Logger
 {

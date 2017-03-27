@@ -1,7 +1,7 @@
 ﻿using System;
-using System.Collections.Generic;
 using System.ComponentModel.DataAnnotations;
 
+// Main Call Model
 namespace Call_Logger.Models
 {
     public class Call

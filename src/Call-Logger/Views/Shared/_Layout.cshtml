@@ -72,14 +72,18 @@
     <script src="~/Scripts/jquery.validate.unobtrusive.min.js"></script>
     <script src="~/Scripts/jquery.validate.bootstrap.js"></script>
     <script src="~/Scripts/bootstrap.min.js"></script>
-    <script src="~/Scripts/bootstrap-datepicker.min.js"></script>
-      <script>
+    
+    @*JQUERY PLUGIN "DATEPICKER" - IMPLEMENTATION*@ 
+    <script src="~/Scripts/bootstrap-datepicker.min.js"></script> 
+    <script>
         $('input.datepicker').datepicker({
             format: 'm/d/yyyy'
         });
     </script>
+   
+     @*JQUERY PLUGIN "DATATABLE" - IMPLEMENTATION*@
     <script src="~/Scripts/jquery.dataTables.min.js"></script>
-    <script>
+     <script>
         $(document).ready(function () {
             $('#calltable').DataTable();
         });

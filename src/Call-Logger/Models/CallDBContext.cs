@@ -1,9 +1,6 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Web;
-using System.Data.Entity;
+﻿using System.Data.Entity;
 
+// CONTEXT FOR USER ACCOUNT - CREDENTIALS
 namespace Call_Logger.Models
 {
     public class CallDBContext : DbContext

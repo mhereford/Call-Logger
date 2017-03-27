@@ -18,6 +18,7 @@ namespace Call_Logger.Controllers
             }
         }
 
+        //Account Registration
         public ActionResult Register()
         {
             return View();
@@ -37,9 +38,11 @@ namespace Call_Logger.Controllers
                 ModelState.Clear();
                 ViewBag.Message = account.FirstName + " " + account.LastName + " successfully registered.";
             }
-            return View();
+            //return View();
+            return RedirectToAction("Login");
         }
-        //Login
+
+        //Login Controller
         public ActionResult Login()
         {
             return View();
@@ -50,7 +53,8 @@ namespace Call_Logger.Controllers
         {
             using (CallDBContext db = new CallDBContext())
             {
-                var usr = db.userAccount.Single(u => u.UserName == user.UserName && u.Password == user.Password);
+                var usr = db.userAccount.SingleOrDefault(u => u.UserName == user.UserName && u.Password == user.Password);
+
                 if (usr != null)
                 {
                     Session["UserID"] = usr.UserID.ToString();
@@ -59,7 +63,7 @@ namespace Call_Logger.Controllers
                 }
                 else
                 {
-                    ModelState.AddModelError("", "Username//Password combination is incorrect.");
+                    ModelState.AddModelError("", "Username/Password combination is incorrect.");
                 }
             }
             return View();
@@ -77,6 +81,7 @@ namespace Call_Logger.Controllers
             }
         }
 
+        //Logout Cotroller
         public ActionResult LogOut()
         {
             Session.Abandon();

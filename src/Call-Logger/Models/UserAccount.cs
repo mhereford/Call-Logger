@@ -1,9 +1,6 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Web;
-using System.ComponentModel.DataAnnotations;
+﻿using System.ComponentModel.DataAnnotations;
 
+// MODEL FOR USER ACCOUNTS - USED FOR REGISTRATION and LOGIN/LOGOUT
 namespace Call_Logger.Models
 {
     public class UserAccount
@@ -18,6 +15,7 @@ namespace Call_Logger.Models
         public string LastName { get; set; }
 
         [Required(ErrorMessage = "Email is required.")]
+        // password format validation
         [RegularExpression(@"^([\w-\.]+)@((\[[0-9]{1,3]\.)|(([\w-]+\.)+))([a-zA-Z{2,4}|[0-9]{1,3})(\]?)$", ErrorMessage = "Please enter valid email.")]
         public string Email { get; set; }
 

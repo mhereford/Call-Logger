@@ -1,7 +1,10 @@
 ﻿@model Call_Logger.Models.Call
 @using Call_Logger.Models
 
+@*FORM TEMPLATE FOR ADD AND EDIT VIEWS*@
 
+
+@*SELECT LIST SETUP*@
 @{
     var selectListItems = new[]
     {
@@ -25,6 +28,8 @@
         new SelectListItem() { Value = "Yasilda Stoner", Text = "Yasilda Stoner", Selected = false }
     };
 }
+
+@*TABLE/FORM TEMPLATE*@
 
 @using (Html.BeginForm())
 {
