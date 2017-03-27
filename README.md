@@ -12,5 +12,11 @@ To Run:
         https://github.com/mhereford/Call-Logger.git
   2. Open Repository in Visual Studio Community Edition 2015.
   3. Select to run the application in the browser of your choice.
+  
+  You will be taken to a Registration Screen
+  4. Register for an account and create a user id and password.  There is no validation other than email format on the Registration Page.
+  5. Login to the Application.
+  6. Initiate all CRUD operations from the list screen ("Index")
 
-Call-Logger allows for the addition of new calls, editing and deleting of existing calls.  The landing screen contains a link to the Add screen and a list of all calls in the database.  Each existig call in the table cotntains links to the Edit and Delete Pages to complete those operations.  The application will validate for missing required fields and report messages to the user.  The application will also provide feedback to the user if their CRUD operation is successful.
+Call-Logger contains two JavaScript Plugins:  DatePicker and DataTable.  DatePicker is used for updating the date on both the Add and Edit Screen.
+DataTable provides dynamic filtering of table columns, pagination and sortable columns.
