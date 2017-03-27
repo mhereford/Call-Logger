@@ -12,8 +12,6 @@ To Run:
         https://github.com/mhereford/Call-Logger.git
   2. Open Repository in Visual Studio Community Edition 2015.
   3. Select to run the application in the browser of your choice.
-  
-  You will be taken to a Registration Screen
   4. Register for an account and create a user id and password.  There is no validation other than email format on the Registration Page.
   5. Login to the Application.
   6. Initiate all CRUD operations from the list screen ("Index")
