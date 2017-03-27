@@ -8,6 +8,7 @@
 
 <h2>@ViewBag.Title</h2>
 <br />
+<a href="@Url.Action("Logout", "Account")">Logout</a>
 
 @{
     ViewBag.Title = "LoggedIn";
@@ -15,9 +16,10 @@
 
 @if (Session["UserID"] != null)
 {
-    <h4>Hello @Session["Username"].ToString()</h4>
+    <h4>Logged in as:  @Session["Username"].ToString()</h4>
 }
-
+<br />
+<br />
 
     @if (TempData["Message"] != null)
     {

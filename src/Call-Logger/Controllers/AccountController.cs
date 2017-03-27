@@ -56,7 +56,6 @@ namespace Call_Logger.Controllers
                     Session["UserID"] = usr.UserID.ToString();
                     Session["UserName"] = usr.UserName.ToString();
                     return Redirect("http://localhost:52319/CallLog/Index");
-                   // return @Url.Action("/CallLog/Index").ToString();            
                 }
                 else
                 {
@@ -76,6 +75,12 @@ namespace Call_Logger.Controllers
             {
                 return RedirectToAction("Login");
             }
+        }
+
+        public ActionResult LogOut()
+        {
+            Session.Abandon();
+            return Redirect("http://localhost:52319/Account/Login");
         }
     }
 }
